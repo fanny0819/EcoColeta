@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoColeta Suzano — Economia Circular e Coleta Seletiva</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <span class="brand-dot"></span>
+            <h1>EcoColeta <span>Suzano</span></h1>
+        </div>
+        <nav class="nav-links">
+            <a href="#problema">O Desafio</a>
+            <a href="#solucao">Como Funciona</a>
+            <a href="#simulador">Simulador CO₂</a>
+            <a href="#ecopontos">Ecopontos</a>
+            <a href="#roadmap" class="badge-nav">Roadmap v2.0</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text animate-fade-up">
+                <span class="pill-tag">🌱 Sustentabilidade Urbana • Suzano - SP</span>
+                <h2>Conectando cidadãos aos ecopontos para transformar resíduos em impacto positivo.</h2>
+                <p>
+                    Uma plataforma web acessível que mapeia pontos de coleta seletiva em Suzano, 
+                    educa sobre o descarte correto e mensura em tempo real a redução de emissões de CO₂.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#simulador" class="btn-primary">Testar Simulador de Impacto</a>
+                    <a href="#ecopontos" class="btn-secondary">Explorar Mapa de Suzano</a>
+                </div>
+            </div>
+
+            <div class="hero-card float-card animate-fade-up delay-1">
+                <div class="metric">
+                    <span class="metric-value">9,0 kg</span>
+                    <span class="metric-label">de CO₂ evitados a cada 1 kg de alumínio reciclado</span>
+                </div>
+                <hr>
+                <div class="metric">
+                    <span class="metric-value">ODS 11 & 12</span>
+                    <span class="metric-label">Cidades Sustentáveis e Consumo Responsável (ONU)</span>
+                </div>
+                <hr>
+                <div class="metric">
+                    <span class="metric-value">100% Web</span>
+                    <span class="metric-label">Acesso rápido pelo celular ou computador sem instalação</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problema" class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Contexto & Oportunidade</span>
+                <h3>Por que o EcoColeta é necessário?</h3>
+                <p>Grande parte dos resíduos recicláveis ainda vai para aterros por falta de informação clara sobre onde e como descartar.</p>
+            </div>
+
+            <div class="cards-3">
+                <div class="info-card">
+                    <div class="icon-box">📍</div>
+                    <h4>Desinformação Local</h4>
+                    <p>Moradores muitas vezes desconhecem os horários, endereços e tipos de materiais aceitos nos ecopontos e cooperativas de Suzano.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box">📊</div>
+                    <h4>Falta de Engajamento</h4>
+                    <p>Sem visualizar o resultado prático da reciclagem, o cidadão não percebe o quanto sua atitude individual reduz a pegada de carbono.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box">♻️</div>
+                    <h4>Contaminação de Resíduos</h4>
+                    <p>Misturar materiais úmidos ou sujos inutiliza lotes inteiros de papel e plástico que poderiam gerar renda para cooperativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucao" class="section bg-alt reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Jornada do Usuário</span>
+                <h3>Como funciona na prática</h3>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h4>Separe & Higienize</h4>
+                    <p>Separe plástico, metal, papel, vidro ou eletrônicos e remova restos de alimentos ou líquidos.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h4>Localize no Mapa</h4>
+                    <p>Filtre por tipo de material para encontrar o ecoponto mais próximo em Suzano - SP.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h4>Registre & Acompanhe</h4>
+                    <p>Informe a quantidade e o peso descartado para acompanhar o cálculo imediato de CO₂ evitado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Demonstração Interativa</span>
+                <h3>Simulador de Impacto Ambiental</h3>
+                <p>Escolha o material, a quantidade de itens e o peso unitário para calcular o impacto total.</p>
+            </div>
+
+            <div class="simulador-box">
+                <div class="sim-controls">
+                    <div>
+                        <label for="sim-material">Tipo de Material Reciclável</label>
+                        <select id="sim-material">
+                            <option value="Plástico">Plástico (Garrafas PET, embalagens)</option>
+                            <option value="Metal">Metal (Latas de alumínio, aço)</option>
+                            <option value="Papel">Papel e Papelão</option>
+                            <option value="Vidro">Vidro (Frascos, garrafas)</option>
+                            <option value="Eletrônico">Lixo Eletrônico (REEE)</option>
+                        </select>
+                    </div>
+
+                    <div class="sim-inputs-grid">
+                        <div>
+                            <label for="sim-qtd">Quantidade (unidades)</label>
+                            <input type="number" id="sim-qtd" min="1" max="500" step="1" value="10">
+                        </div>
+                        <div>
+                            <label for="sim-peso-unit">Peso por unidade (kg)</label>
+                            <input type="number" id="sim-peso-unit" min="0.01" max="50" step="0.01" value="0.05">
+                        </div>
+                    </div>
+
+                    <div class="peso-total-bar">
+                        <span>Peso Total Calculado:</span>
+                        <strong id="sim-peso-total">0.50 kg</strong>
+                    </div>
+
+                    <div class="dica-box" id="sim-dica">
+                        💡 Esvazie o líquido, amasse a garrafa e feche com a tampa para facilitar a triagem.
+                    </div>
+                </div>
+
+                <div class="sim-result">
+                    <span class="res-tag">Impacto Ambiental Evitado</span>
+                    <h4 id="sim-co2">0.75 kg de CO₂</h4>
+                    <p>de gases de efeito estufa evitados na atmosfera!</p>
+                    <div class="res-extra" id="sim-equivalente">
+                        Equivale a aproximadamente 4 km não rodados por um carro a combustão.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ecopontos" class="section bg-alt reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Geolocalização</span>
+                <h3>Pontos de Coleta em Suzano - SP</h3>
+                <div class="filtro-wrap">
+                    <select id="filtro-mapa">
+                        <option value="Todos">Mostrar todos os ecopontos</option>
+                        <option value="Plástico">Filtrar por: Plástico</option>
+                        <option value="Metal">Filtrar por: Metal</option>
+                        <option value="Papel">Filtrar por: Papel</option>
+                        <option value="Vidro">Filtrar por: Vidro</option>
+                        <option value="Eletrônico">Filtrar por: Eletrônicos</option>
+                    </select>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="section reveal">
+        <div class="container">
+            <div class="roadmap-banner">
+                <div>
+                    <span class="pill-amber">Próxima Evolução • Sprint 2 (v2.0)</span>
+                    <h3>Scanner Inteligente por Visão Computacional</h3>
+                    <p>
+                        Na próxima atualização do EcoColeta, os usuários poderão apontar a câmera do celular 
+                        para qualquer embalagem e identificar automaticamente o material reciclável, peso médio 
+                        e instruções de descarte via Inteligência Artificial.
+                    </p>
+                </div>
+                <div class="roadmap-status">
+                    <strong>Status no Trello:</strong>
+                    <span>Solicitação 01 • Backlog Priorizado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h4>EcoColeta Suzano</h4>
+            <p>Projeto desenvolvido na graduação em Análise e Desenvolvimento de Sistemas (UNIPIAGET).</p>
+            <small>Gestão Ágil & PMBOK • Tecnologia a favor da sustentabilidade urbana.</small>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
